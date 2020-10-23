@@ -30,15 +30,6 @@ class PackageCommon {
       });
   }
 
-  afterDeploy() {
-    if(this.symlinked) {
-      this.options.common.forEach(commonFolder => {
-        const target = commonFolder.replace(/..\//g, '');
-        symlink.removeFolder(target);
-      });
-    }
-  }
-
   handleExit(func) {
     ['SIGINT', 'SIGTERM', 'SIGQUIT']
       .forEach(signal => process.on(signal, () => {

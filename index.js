@@ -13,7 +13,9 @@ class PackageCommon {
 
     this.hooks = {
       'before:package:createDeploymentArtifacts': this.beforeDeploy.bind(this),
-      'after:deploy:deploy': this.afterDeploy.bind(this)
+      'after:deploy:deploy': this.afterDeploy.bind(this),
+      'before:invoke:local:invoke': this.beforeDeploy.bind(this),
+      'after:invoke:local:invoke': this.afterDeploy.bind(this)
     };
 
     this.handleExit();
